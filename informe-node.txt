@@ -1,0 +1,68 @@
+# Informe de Evaluación - Módulo 4: Node.js
+**Proyecto:** Página Web Comercial "Café y Aroma"  
+**Estudiante:** Luna Garay  
+**Instructor:** Ing. María Fernanda Guerrero  
+**Fecha:** Julio 2026  
+
+---
+
+## 1. Objetivo del proyecto
+El proyecto consistió en crear un pequeño programa con Node.js que permitiera procesar la información de un producto comercial, definir su categoría según el precio y generar un archivo de texto con la información final. La práctica tuvo como objetivo comprender el funcionamiento básico de JavaScript del lado del servidor y la interacción con el sistema de archivos.
+
+## 2. ¿Qué hace el script?
+El archivo `generador.js` se ejecuta desde la terminal y realiza las siguientes tareas:
+
+- toma el nombre y el precio del producto;
+- importa la lógica del módulo `evaluador.js`;
+- calcula la categoría del producto:
+  - si el precio es mayor o igual a 50, la categoría es `Premium`;
+  - si es menor, la categoría es `Estándar`;
+- crea o sobrescribe un archivo llamado `info.txt` con el contenido del producto.
+
+La función principal de este script es automatizar la generación de una ficha técnica para la presentación del producto, sin necesidad de hacerlo manualmente.
+
+## 3. ¿Qué aprendiste de Node.js?
+Durante esta actividad aprendí varios conceptos clave:
+
+- **Ejecución de JavaScript fuera del navegador:** Node.js permite ejecutar código JavaScript directamente en la terminal del sistema operativo.
+- **Módulos en Node.js:** Comprendí la diferencia entre archivos independientes y cómo compartir funciones entre archivos con `require()` y `module.exports`.
+- **Manipulación del sistema de archivos:** Aprendí a usar el módulo `fs` para crear y escribir archivos en el equipo.
+- **Formateo de datos:** Descubrí cómo usar `toFixed(2)` para mostrar valores monetarios con dos decimales.
+
+## 4. Dificultades y soluciones
+Durante el desarrollo, encontré algunas dificultades comunes:
+
+- **Error en la ruta del módulo:** Al intentar importar `evaluador.js` de forma incorrecta, Node.js lo buscaba como una dependencia externa. Se solucionó usando la ruta relativa correcta: `require('./evaluador')`.
+- **Formato del precio:** El precio se imprimía con demasiados decimales o con formato incorrecto. Se corrigió usando `.toFixed(2)` para asegurar que apareciera como moneda.
+- **Ejecución desde la terminal:** En algunos momentos surgieron problemas porque el comando `node` no estaba disponible en el PATH del sistema. Se resolvió usando la ruta completa de Node.js o reiniciando la terminal.
+
+## 5. Resultado obtenido
+El programa generó correctamente el archivo `info.txt` con la siguiente estructura:
+
+```text
+Producto: Café Orgánico Tueste Especial (1kg)
+• Precio: $55.00
+• Categoría: Premium
+```
+
+Esto demuestra que el script funciona correctamente y que la lógica de clasificación se ejecuta como esperaba.
+
+## 6. ¿Cómo se ejecuta en otra máquina?
+Para ejecutar este proyecto en otra computadora, se deben seguir estos pasos:
+
+1. Instalar Node.js.
+2. Abrir la terminal en la carpeta del proyecto.
+3. Ejecutar el siguiente comando:
+
+```bash
+node generador.js
+```
+
+4. Verificar que se genere el archivo `info.txt` en la misma ubicación.
+
+## 7. Conclusión
+Node.js resultó ser una herramienta muy útil para automatizar tareas simples, como la creación de archivos y la lógica de negocio aplicada a datos reales. Este proyecto me permitió comprender la base del backend y aplicar conceptos fundamentales de programación en un entorno práctico y funcional.
+
+---
+
+**Fin del informe.**
